@@ -144,13 +144,17 @@ export const DivPassWord = styled.div`
   .btn {
     background: transparent;
     color: rgba(148, 163, 184, 1);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
   }
 
   .icon {
     width: 18px;
     height: 18px;
-
     position: absolute;
     right: 18px;
+    bottom: 25%;
   }
 `;
