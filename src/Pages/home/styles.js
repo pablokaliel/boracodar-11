@@ -14,6 +14,10 @@ export const Container = styled.div`
       font-size: 16px;
       line-height: 24px;
       color: #7c3aed;
+      transition: all 0.3s;
+      :hover{
+        text-decoration:underline;
+      }
     }
   }
 `;
@@ -81,6 +85,7 @@ export const DivInput = styled.div`
 
     background: #7c3aed;
     border-radius: 4px;
+
   
  }
 `;
@@ -101,6 +106,10 @@ export const DivPassWord = styled.div`
       font-weight: 600;
       font-size: 14px;
       line-height: 21px;
+      transition: all 0.3s;
+      :hover{
+        text-decoration:underline;
+      }
     }
   }
 
