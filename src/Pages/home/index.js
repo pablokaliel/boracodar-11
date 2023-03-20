@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Container,
   DivImg,
@@ -7,12 +8,12 @@ import {
   DivPassWord,
   Input,
 } from "./styles";
-import { useState } from "react";
 
 import logo from "../../Assets/logo.svg";
 import eye from "../../Assets/eye-off.png";
 
 function Home() {
+
   const [ocult, setOcult] = useState("password");
 
   function toggleHide() {
@@ -46,7 +47,7 @@ function Home() {
           </div>
           <div className="swapper">
             <div className="icon">
-              <button className="btn" onClick={()=> toggleHide()}>
+              <button className="btn" onClick={() => toggleHide()}>
                 <img src={eye} />
               </button>
             </div>
