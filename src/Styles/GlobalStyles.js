@@ -18,6 +18,12 @@
     background-repeat: no-repeat;
     background-position:right;
     background-size:contain;
+
+    @media (max-width: 770px) {
+    object-fit:cover;
+    background-size:auto;
+    background-position:center;
+  }
   }
   
   button{

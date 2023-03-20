@@ -3,13 +3,16 @@ import styled from "styled-components";
 export const Container = styled.div`
   margin-top: 40px;
   padding: 0px 112px;
-
+  
   span {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #475569;
-
+    @media (max-width: 770px) {
+color: white;
+  
+  }
     a {
       font-weight: 700;
       font-size: 16px;
@@ -22,17 +25,27 @@ export const Container = styled.div`
       }
     }
   }
+  @media (max-width: 770px) {
+  padding:18px;
+  width: 100%;
+  
+  }
 `;
 
 export const DivImg = styled.div`
   margin-bottom: 114px;
+
+  @media (max-width: 770px) {
+  margin-bottom:40px;
+  }
 `;
 
 export const DivAccess = styled.div`
   width: 350px;
   margin-bottom: 40px;
-
+  
   h1 {
+    color:#fff;
     font-weight: 700;
     font-size: 36px;
     line-height: 55px;
@@ -41,6 +54,7 @@ export const DivAccess = styled.div`
   }
 
   span {
+    color:rgb(204 214 227);
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -65,6 +79,10 @@ export const Input = styled.input`
 
 export const DivInput = styled.div`
   width: 384px;
+  @media (max-width: 770px) {
+    width: 100%;
+    color:#fff;
+  }
 
   label {
     font-weight: 600;
@@ -86,6 +104,10 @@ export const DivInput = styled.div`
     color: #ffffff;
     background: #7c3aed;
     border-radius: 4px;
+    
+    @media (max-width: 770px) {
+  width: 100%;
+  }
   }
 `;
 
