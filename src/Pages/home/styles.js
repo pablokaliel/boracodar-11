@@ -3,16 +3,17 @@ import styled from "styled-components";
 export const Container = styled.div`
   margin-top: 40px;
   padding: 0px 112px;
-  
+
   span {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #475569;
-    @media (max-width: 770px) {
-color: white;
   
-  }
+    @media (max-width: 770px) {
+      color: white;
+    }
+  
     a {
       font-weight: 700;
       font-size: 16px;
@@ -25,10 +26,10 @@ color: white;
       }
     }
   }
-  @media (max-width: 770px) {
-  padding:18px;
-  width: 100%;
   
+  @media (max-width: 770px) {
+    padding: 18px;
+    width: 100%;
   }
 `;
 
@@ -36,16 +37,16 @@ export const DivImg = styled.div`
   margin-bottom: 114px;
 
   @media (max-width: 770px) {
-  margin-bottom:40px;
+    margin-bottom: 40px;
   }
 `;
 
 export const DivAccess = styled.div`
   width: 350px;
   margin-bottom: 40px;
-  
+
   h1 {
-    color:#fff;
+    color: #fff;
     font-weight: 700;
     font-size: 36px;
     line-height: 55px;
@@ -54,7 +55,7 @@ export const DivAccess = styled.div`
   }
 
   span {
-    color:rgb(204 214 227);
+    color: rgb(204 214 227);
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -81,7 +82,7 @@ export const DivInput = styled.div`
   width: 384px;
   @media (max-width: 770px) {
     width: 100%;
-    color:#fff;
+    color: #fff;
   }
 
   label {
@@ -104,10 +105,10 @@ export const DivInput = styled.div`
     color: #ffffff;
     background: #7c3aed;
     border-radius: 4px;
-    
+
     @media (max-width: 770px) {
-  width: 100%;
-  }
+      width: 100%;
+    }
   }
 `;
 
@@ -144,10 +145,10 @@ export const DivPassWord = styled.div`
   .btn {
     background: transparent;
     color: rgba(148, 163, 184, 1);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
   }
 
   .icon {
