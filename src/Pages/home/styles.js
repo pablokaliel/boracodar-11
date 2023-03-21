@@ -9,11 +9,11 @@ export const Container = styled.div`
     font-size: 16px;
     line-height: 24px;
     color: #475569;
-  
+
     @media (max-width: 770px) {
       color: white;
     }
-  
+
     a {
       font-weight: 700;
       font-size: 16px;
@@ -23,10 +23,11 @@ export const Container = styled.div`
 
       :hover {
         text-decoration: underline;
+        color: #9f67ff;
       }
     }
   }
-  
+
   @media (max-width: 770px) {
     padding: 18px;
     width: 100%;
@@ -46,19 +47,25 @@ export const DivAccess = styled.div`
   margin-bottom: 40px;
 
   h1 {
-    color: #fff;
     font-weight: 700;
     font-size: 36px;
     line-height: 55px;
+    @media (max-width: 770px) {
+      color: #fff;
+    }
 
     margin-bottom: 16px;
   }
 
   span {
-    color: rgb(204 214 227);
+    color: #475569;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+
+    @media (max-width: 770px) {
+      color: rgb(204 214 227);
+    }
   }
 `;
 
@@ -72,13 +79,17 @@ export const Input = styled.input`
   border: 1px solid #e2e8f0;
   border-radius: 4px;
 
+  color: #7c3aed;
   :focus {
     border: 1px solid #7c3aed;
     border-radius: 4px;
+    ::placeholder {
+      color: #7c3aed;
+    }
   }
 `;
 
-export const DivInput = styled.div`
+export const DivInput = styled.form`
   width: 384px;
   @media (max-width: 770px) {
     width: 100%;
@@ -105,6 +116,12 @@ export const DivInput = styled.div`
     color: #ffffff;
     background: #7c3aed;
     border-radius: 4px;
+    transition: all 0.3s;
+    outline: none;
+    border: none;
+    :hover {
+      background-color: #9f67ff;
+    }
 
     @media (max-width: 770px) {
       width: 100%;
@@ -134,6 +151,7 @@ export const DivPassWord = styled.div`
 
       :hover {
         text-decoration: underline;
+        color: #9f67ff;
       }
     }
   }
@@ -155,7 +173,18 @@ export const DivPassWord = styled.div`
     width: 18px;
     height: 18px;
     position: absolute;
-    right: 18px;
+    right: 30px;
     bottom: 25%;
+  }
+`;
+
+export const BackgroundDesktop = styled.img`
+  @media (max-width: 770px) {
+    display: none;
+  }
+`;
+export const BackgroundMobile = styled.img`
+  @media (min-width: 770px) {
+    display: none;
   }
 `;
