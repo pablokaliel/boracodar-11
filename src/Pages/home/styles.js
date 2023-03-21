@@ -133,9 +133,18 @@ export const DivEmail = styled.div`
   div {
     margin-bottom: 8px;
   }
+  p{
+    font-weight:600;
+    margin-top:8px;
+    color: red;
+  }
 `;
 
 export const DivPassWord = styled.div`
+  p{
+    color:red;
+    font-weight:600;
+  }
   div {
     display: flex;
     justify-content: space-between;

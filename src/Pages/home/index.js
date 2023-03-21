@@ -78,7 +78,7 @@ function Home() {
             name="email"
             {...register("email", { required: true })}
           />
-          <p style={{ color: "#f00" }}>{errors.email?.message}</p>
+          <p >{errors.email?.message}</p>
         </DivEmail>
         <DivPassWord>
           <div>
@@ -98,7 +98,7 @@ function Home() {
               {...register("password", { required: true })}
             />
           </div>
-          <p style={{ color: "#f00" }}>{errors.password?.message}</p>
+          <p >{errors.password?.message}</p>
         </DivPassWord>
         <input className="enter" type="submit" placeholder="ENVIAR" />
       </DivInput>
