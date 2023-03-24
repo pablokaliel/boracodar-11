@@ -11,7 +11,7 @@ export const Container = styled.div`
     color: #475569;
 
     @media (max-width: 770px) {
-      color: white;
+      color: #c4d1e3;
     }
 
     a {
@@ -20,6 +20,10 @@ export const Container = styled.div`
       line-height: 24px;
       color: #7c3aed;
       transition: all 0.3s;
+
+      @media (max-width: 770px) {
+        color: white;
+      }
 
       :hover {
         text-decoration: underline;
@@ -64,7 +68,7 @@ export const DivAccess = styled.div`
     line-height: 24px;
 
     @media (max-width: 770px) {
-      color: rgb(204 214 227);
+      color: #c4d1e3;
     }
   }
 `;
@@ -133,17 +137,17 @@ export const DivEmail = styled.div`
   div {
     margin-bottom: 8px;
   }
-  p{
-    font-weight:600;
-    margin-top:8px;
+  p {
+    font-weight: 600;
+    margin-top: 8px;
     color: red;
   }
 `;
 
 export const DivPassWord = styled.div`
-  p{
-    color:red;
-    font-weight:600;
+  p {
+    color: red;
+    font-weight: 600;
   }
   div {
     display: flex;
@@ -157,6 +161,9 @@ export const DivPassWord = styled.div`
       font-size: 14px;
       line-height: 21px;
       transition: all 0.3s;
+      @media (max-width: 770px) {
+        color: #fff;
+      }
 
       :hover {
         text-decoration: underline;

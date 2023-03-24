@@ -28,6 +28,7 @@ const schema = yup
     password: yup
       .string()
       .min(6, "a senha deve ter pelo menos 6 digitos")
+      .max(12, "recomendamos não ultrapassar 12 digitos")
       .required("senha é obrigatoria"),
   })
   .required();
