@@ -10,20 +10,12 @@ export const Container = styled.div`
     line-height: 24px;
     color: #475569;
 
-    @media (max-width: 770px) {
-      color: #c4d1e3;
-    }
-
     a {
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
       color: #7c3aed;
       transition: all 0.3s;
-
-      @media (max-width: 770px) {
-        color: white;
-      }
 
       :hover {
         text-decoration: underline;
@@ -54,10 +46,6 @@ export const DivAccess = styled.div`
     font-weight: 700;
     font-size: 36px;
     line-height: 55px;
-    @media (max-width: 770px) {
-      color: #fff;
-    }
-
     margin-bottom: 16px;
   }
 
@@ -66,10 +54,6 @@ export const DivAccess = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-
-    @media (max-width: 770px) {
-      color: #c4d1e3;
-    }
   }
 `;
 
@@ -97,7 +81,6 @@ export const DivInput = styled.form`
   width: 384px;
   @media (max-width: 770px) {
     width: 100%;
-    color: #fff;
   }
 
   label {
@@ -161,9 +144,6 @@ export const DivPassWord = styled.div`
       font-size: 14px;
       line-height: 21px;
       transition: all 0.3s;
-      @media (max-width: 770px) {
-        color: #fff;
-      }
 
       :hover {
         text-decoration: underline;
@@ -194,13 +174,4 @@ export const DivPassWord = styled.div`
   }
 `;
 
-export const BackgroundDesktop = styled.img`
-  @media (max-width: 770px) {
-    display: none;
-  }
-`;
-export const BackgroundMobile = styled.img`
-  @media (min-width: 770px) {
-    display: none;
-  }
-`;
+export const BackgroundDesktop = styled.img``;

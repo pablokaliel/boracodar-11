@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import {
   Container,
   DivImg,
@@ -8,14 +9,13 @@ import {
   DivPassWord,
   Input,
   BackgroundDesktop,
-  BackgroundMobile,
 } from "./styles";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import logo from "../../Assets/logo.svg";
-import logo2 from "../../Assets/logo2.svg";
 import eyeon from "../../Assets/eye.png";
 import eyeoff from "../../Assets/eye-off.png";
 
@@ -57,7 +57,6 @@ function Home() {
   return (
     <Container>
       <DivImg>
-        <BackgroundMobile src={logo2} alt="logo mobile" />
         <BackgroundDesktop src={logo} alt="logo desktop" />
       </DivImg>
 
@@ -79,7 +78,7 @@ function Home() {
             name="email"
             {...register("email", { required: true })}
           />
-          <p >{errors.email?.message}</p>
+          <p>{errors.email?.message}</p>
         </DivEmail>
         <DivPassWord>
           <div>
@@ -99,7 +98,7 @@ function Home() {
               {...register("password", { required: true })}
             />
           </div>
-          <p >{errors.password?.message}</p>
+          <p>{errors.password?.message}</p>
         </DivPassWord>
         <input className="enter" type="submit" placeholder="ENVIAR" />
       </DivInput>
