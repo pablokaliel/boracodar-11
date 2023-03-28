@@ -11,10 +11,10 @@
   
   body{
     font-family: 'Titillium Web',sans-serif;
-    min-height: 100vh;
+    /* min-height: 100vh;
     height: 100vh;
-    width: 100vw;
-    background-image: url(${background});
+    width: 100vw; */
+    /* background-image: url(${background}); */
     background-repeat: no-repeat;
     background-position:right;
     background-size:contain;
@@ -22,6 +22,11 @@
     @media (max-width: 770px) {
       background-image:none;
   }
+  }
+
+  #root,html,body{
+    width: 100%;
+    height: 100%;
   }
   
   button{

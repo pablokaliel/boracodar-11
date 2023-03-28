@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-top: 40px;
-  padding: 0px 112px;
+  display: flex;
 
   span {
     font-weight: 400;
@@ -23,11 +22,6 @@ export const Container = styled.div`
       }
     }
   }
-
-  @media (max-width: 770px) {
-    padding: 18px;
-    width: 100%;
-  }
 `;
 
 export const DivImg = styled.div`
@@ -35,6 +29,33 @@ export const DivImg = styled.div`
 
   @media (max-width: 770px) {
     margin-bottom: 40px;
+  }
+`;
+
+export const DivBg = styled.div`
+  height: 100vh;
+  width: 100vw;
+ 
+  @media (max-width: 1000px) {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  width: 50%;
+`;
+
+export const DivItens = styled.div`
+  width: 50%;
+  margin-top: 40px;
+  padding: 0px 112px;
+
+  @media (max-width: 780px) {
+    width: 100%;
+    padding: 18px;
   }
 `;
 

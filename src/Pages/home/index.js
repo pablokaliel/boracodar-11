@@ -9,6 +9,7 @@ import {
   DivPassWord,
   Input,
   BackgroundDesktop,
+  DivBg,DivItens
 } from "./styles";
 
 import { useForm } from "react-hook-form";
@@ -16,6 +17,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import logo from "../../Assets/logo.svg";
+import img from "../../Assets/img.png";
 import eyeon from "../../Assets/eye.png";
 import eyeoff from "../../Assets/eye-off.png";
 
@@ -56,6 +58,7 @@ function Home() {
 
   return (
     <Container>
+      <DivItens>
       <DivImg>
         <BackgroundDesktop src={logo} alt="logo desktop" />
       </DivImg>
@@ -71,18 +74,19 @@ function Home() {
       <DivInput onSubmit={handleSubmit(onSubmit)}>
         <DivEmail>
           <div>
-            <label>E-mail</label>
+            <label for="email">E-mail</label>
           </div>
           <Input
             placeholder="Digite seu e-mail"
             name="email"
+            id="email"
             {...register("email", { required: true })}
           />
           <p>{errors.email?.message}</p>
         </DivEmail>
         <DivPassWord>
           <div>
-            <label>Senha</label>
+            <label for="password">Senha</label>
             <a href="#">Esqueceu a senha?</a>
           </div>
           <div className="swapper">
@@ -92,6 +96,7 @@ function Home() {
               </button>
             </div>
             <Input
+            id="password"
               type={ocult}
               placeholder="Digite sua senha"
               name="password"
@@ -105,6 +110,10 @@ function Home() {
       <span>
         Ainda não tem conta? <a href="#">inscreva-se</a>
       </span>
+      </DivItens>
+      <DivBg>
+        <img src={img}/>
+      </DivBg>
     </Container>
   );
 }
