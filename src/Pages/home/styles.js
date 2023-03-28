@@ -27,7 +27,7 @@ export const Container = styled.div`
 export const DivImg = styled.div`
   margin-bottom: 114px;
 
-  @media (max-width: 770px) {
+  @media (max-width: 780px) {
     margin-bottom: 40px;
   }
 `;
@@ -36,16 +36,16 @@ export const DivBg = styled.div`
   height: 100vh;
   width: 100vw;
  
-  @media (max-width: 1000px) {
-    display: none;
-  }
-
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
   width: 50%;
+
+  @media(max-width:780px){
+    display: none;
+  }
 `;
 
 export const DivItens = styled.div`
@@ -56,11 +56,15 @@ export const DivItens = styled.div`
   @media (max-width: 780px) {
     width: 100%;
     padding: 18px;
+
+  }
+  @media(max-width:820px){
+    padding:18px;
   }
 `;
 
 export const DivAccess = styled.div`
-  width: 350px;
+  max-width: 360px;
   margin-bottom: 40px;
 
   h1 {
@@ -99,10 +103,8 @@ export const Input = styled.input`
 `;
 
 export const DivInput = styled.form`
-  width: 384px;
-  @media (max-width: 770px) {
-    width: 100%;
-  }
+  max-width: 384px;
+
 
   label {
     font-weight: 600;
@@ -111,7 +113,7 @@ export const DivInput = styled.form`
   }
 
   .enter {
-    width: 384px;
+    width:100%;
     height: 56px;
 
     margin: 32px 0px;
@@ -129,10 +131,6 @@ export const DivInput = styled.form`
     border: none;
     :hover {
       background-color: #9f67ff;
-    }
-
-    @media (max-width: 770px) {
-      width: 100%;
     }
   }
 `;
