@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {motion} from 'framer-motion'
 
 export const Container = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ export const Container = styled.div`
   }
 `;
 
-export const DivImg = styled.div`
+export const DivImg = styled(motion.div)`
   margin-bottom: 114px;
 
   @media (max-width: 780px) {
@@ -32,7 +33,7 @@ export const DivImg = styled.div`
   }
 `;
 
-export const DivBg = styled.div`
+export const DivBg = styled(motion.div)`
   height: 100vh;
   width: 100vw;
  
@@ -48,7 +49,7 @@ export const DivBg = styled.div`
   }
 `;
 
-export const DivItens = styled.div`
+export const DivItens = styled(motion.div)`
   width: 50%;
   margin-top: 40px;
   padding: 0px 112px;
@@ -56,14 +57,14 @@ export const DivItens = styled.div`
   @media (max-width: 780px) {
     width: 100%;
     padding: 18px;
-
   }
+
   @media(max-width:820px){
     padding:18px;
   }
 `;
 
-export const DivAccess = styled.div`
+export const DivAccess = styled(motion.div)`
   max-width: 360px;
   margin-bottom: 40px;
 
@@ -91,20 +92,20 @@ export const Input = styled.input`
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 4px;
-
   color: #7c3aed;
+
   :focus {
     border: 1px solid #7c3aed;
     border-radius: 4px;
+
     ::placeholder {
       color: #7c3aed;
     }
   }
 `;
 
-export const DivInput = styled.form`
+export const DivInput = styled(motion.form)`
   max-width: 384px;
-
 
   label {
     font-weight: 600;
@@ -123,9 +124,11 @@ export const DivInput = styled.form`
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
+
     color: #ffffff;
     background: #7c3aed;
     border-radius: 4px;
+
     transition: all 0.3s;
     outline: none;
     border: none;
@@ -135,7 +138,7 @@ export const DivInput = styled.form`
   }
 `;
 
-export const DivEmail = styled.div`
+export const DivEmail = styled(motion.div)`
   div {
     margin-bottom: 8px;
   }
@@ -146,7 +149,7 @@ export const DivEmail = styled.div`
   }
 `;
 
-export const DivPassWord = styled.div`
+export const DivPassWord = styled(motion.div)`
   p {
     color: red;
     font-weight: 600;
