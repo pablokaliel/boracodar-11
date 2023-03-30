@@ -34,12 +34,19 @@ const schema = yup
       .min(6, "a senha deve ter pelo menos 6 digitos")
       .max(12, "recomendamos não ultrapassar 12 digitos")
       .required("senha é obrigatoria"),
+    confirmpassword: yup
+      .string()
+      .required("confirmação é obrigatorio")
+      .oneOf([yup.ref("password")], "as senhas devem ser iguais"),
   })
   .required();
 
-function Home() {
+function CreateAccount() {
   const [ocult, setOcult] = useState("password");
   const [passeye, setPassEye] = useState(eyeoff);
+
+  const [ocultConfirm, setOcultConfirm] = useState("password");
+  const [passeyeConfirm, setPassEyeConfirm] = useState(eyeoff);
 
   const {
     register,
@@ -53,23 +60,45 @@ function Home() {
   }
 
   function toggleHide() {
-    ocult === "password" ? setOcult("text") : setOcult("password");
-    passeye === eyeoff ? setPassEye(eyeon) : setPassEye(eyeoff);
+    ocult === "password"
+      ? setOcult("text")
+      : setOcult("password");
+    passeye === eyeoff
+      ? setPassEye(eyeon)
+      : setPassEye(eyeoff);
+  }
+
+  function toggleHideConfirm() {
+    ocultConfirm === "password"
+      ? setOcultConfirm("text")
+      : setOcultConfirm("password");
+    passeyeConfirm === eyeoff
+      ? setPassEyeConfirm(eyeon)
+      : setPassEyeConfirm(eyeoff);
   }
 
   console.log(errors);
 
   return (
     <Container>
+      <DivBg
+        initial={{ x: -200, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: 20, opacity: 0 }}
+        transition={{ duration: 1.3 }}
+      >
+        <img src={img} />
+      </DivBg>
+
       <DivItens
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: -0, opacity: 1 }}
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
         exit={{ x: 90, opacity: 0 }}
         transition={{ duration: 1.1 }}
       >
         <DivImg
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: -0, opacity: 1 }}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           exit={{ x: 90, opacity: 0 }}
           transition={{ duration: 1.1, delay: 1.4 }}
         >
@@ -77,29 +106,28 @@ function Home() {
         </DivImg>
 
         <DivAccess
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: -0, opacity: 1 }}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           exit={{ x: 90, opacity: 0 }}
           transition={{ duration: 1.1, delay: 1.6 }}
         >
-          <h1>Acesse a plataforma</h1>
+          <h1>Crie sua conta para acessar a plataforma</h1>
           <span>
-            Faça login ou registre-se para começar a construir seus projetos
-            ainda hoje.
+            Faça a criação da sua conta de maneira fácil e rápida para para
+            começar a construir seus projetos ainda hoje.
           </span>
         </DivAccess>
 
         <DivInput
           onSubmit={handleSubmit(onSubmit)}
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: -0, opacity: 1 }}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           exit={{ x: 90, opacity: 0 }}
           transition={{ duration: 1.1, delay: 1.8 }}
         >
-
           <DivEmail
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: -0, opacity: 1 }}
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
             exit={{ x: 90, opacity: 0 }}
             transition={{ duration: 1.1, delay: 1.9 }}
           >
@@ -116,22 +144,21 @@ function Home() {
           </DivEmail>
 
           <DivPassWord
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: -0, opacity: 1 }}
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
             exit={{ x: 90, opacity: 0 }}
             transition={{ duration: 1.1, delay: 2.1 }}
           >
             <div>
               <label for="password">Senha</label>
-              <a href="#">Esqueceu a senha?</a>
             </div>
-              <Input
-                id="password"
-                type={ocult}
-                placeholder="Digite sua senha"
-                name="password"
-                {...register("password", { required: true })}
-              />
+            <Input
+              id="password"
+              type={ocult}
+              placeholder="Digite sua senha"
+              name="password"
+              {...register("password", { required: true })}
+            />
             <div className="swapper">
               <div className="icon">
                 <button className="btn" onClick={() => toggleHide()}>
@@ -140,6 +167,32 @@ function Home() {
               </div>
             </div>
             <p>{errors.password?.message}</p>
+          </DivPassWord>
+
+          <DivPassWord
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 90, opacity: 0 }}
+            transition={{ duration: 1.1, delay: 2.2 }}
+          >
+            <div>
+              <label for="confirmpassword">Confirme sua Senha</label>
+            </div>
+            <Input
+              id="confirmpassword"
+              type={ocultConfirm}
+              placeholder="Confirme sua senha"
+              name="confirmpassword"
+              {...register("confirmpassword", { required: true })}
+            />
+            <div className="swapper">
+              <div className="icon">
+                <button className="btn" onClick={() => toggleHideConfirm()}>
+                  <img src={passeyeConfirm} alt="security" />
+                </button>
+              </div>
+            </div>
+            <p>{errors.confirmpassword?.message}</p>
           </DivPassWord>
 
           <motion.input
@@ -159,20 +212,11 @@ function Home() {
           exit={{ opacity: 0 }}
           transition={{ duration: 1.5, delay: 2.2 }}
         >
-          Ainda não tem conta? <LinkCreate to="/login">inscreva-se</LinkCreate>
+          Já possui conta? <LinkCreate to="/">entrar</LinkCreate>
         </motion.span>
       </DivItens>
-
-      <DivBg
-        initial={{ x: 200, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        exit={{ x: 20, opacity: 0 }}
-        transition={{ duration: 1.3 }}
-      >
-        <img src={img} />
-      </DivBg>
     </Container>
   );
 }
 
-export default Home;
+export default CreateAccount;

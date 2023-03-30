@@ -27,7 +27,7 @@ export const Container = styled.div`
 `;
 
 export const DivImg = styled(motion.div)`
-  margin-bottom: 114px;
+  margin-bottom: 60px;
 
   @media (max-width: 780px) {
     margin-bottom: 40px;
@@ -52,6 +52,7 @@ export const DivBg = styled(motion.div)`
 
 export const DivItens = styled(motion.div)`
   width: 50%;
+
   margin-top: 40px;
   padding: 0px 112px;
 
